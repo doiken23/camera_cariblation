@@ -35,5 +35,7 @@ for path_img in Path('.').glob('*.JPG'):
 
 rep, K, d, rvec, tvec = cv2.calibrateCamera(pWs, qIs,
         (img.shape[1], img.shape[0]), None, None)
-print('K')
+print('Internal camera parameter: K')
 pprint(K)
+np.save('K.npy', K)
+np.save('d.npy', d)
